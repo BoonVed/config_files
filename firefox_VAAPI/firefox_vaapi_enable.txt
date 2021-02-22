@@ -1,0 +1,41 @@
+    HOW TO SETUP VAAPI IN FIREFOX:
+ 
+    Requirement:
+    
+    
+
+sudo pacman -S libva-intel-driver intel-gpu-tools libva-utils
+
+
+
+    Verification of VAAPI:
+    
+vainfo
+
+    Firefox configuration:
+    
+gfx.webrender.all           --> true
+media.ffmpeg.vaapi.enabled  --> true
+media.ffvpx.enabled         --> false
+media.rdd-vpx.enabled       --> false
+media.rdd-ffvpx.enabled     --> false
+media.rdd-ffmpeg.enabled    --> true
+gfx.webrender.enabled       --> true
+media.av1.enabled           --> false
+
+
+    
+    X11:
+    
+    
+export MOZ_X11_EGL=1 && export MOZ_DISABLE_RDD_SANDBOX=1 && export MOZ_LOG="PlatformDecoderModule:5" && firefox
+
+
+    WAYLAND:
+    
+    
+export MOZ_ENABLE_WAYLAND=1 && export MOZ_DISABLE_RDD_SANDBOX=1 && export MOZ_LOG="PlatformDecoderModule:5" && firefox
+
+
+ 
+ 
