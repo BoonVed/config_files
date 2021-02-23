@@ -36,6 +36,22 @@ export MOZ_X11_EGL=1 && export MOZ_DISABLE_RDD_SANDBOX=1 && export MOZ_LOG="Plat
     
 export MOZ_ENABLE_WAYLAND=1 && export MOZ_DISABLE_RDD_SANDBOX=1 && export MOZ_LOG="PlatformDecoderModule:5" && firefox
 
+    Adding envirnment variables system wide:
 
+sudo nvim /etc/environment
+
+    Add the following line to /etc/environment
+    For X11:
+export MOZ_X11_EGL=1 
+export MOZ_DISABLE_RDD_SANDBOX=1
+
+
+
+
+    for WAYLAND:
+
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DISABLE_RDD_SANDBOX=1
  
  
+
